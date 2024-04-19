@@ -1,0 +1,183 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "suite": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/suite",
+      "sourceRoot": "projects/suite/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:application",
+          "options": {
+            "outputPath": "dist/suite",
+            "index": "projects/suite/src/index.html",
+            "browser": "projects/suite/src/main.ts",
+            "polyfills": [
+              "zone.js"
+            ],
+            "tsConfig": "projects/suite/tsconfig.app.json",
+            "assets": [
+              "projects/suite/src/favicon.ico",
+              "projects/suite/src/assets"
+            ],
+            "styles": [
+              "projects/suite/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "suite:build:production"
+            },
+            "development": {
+              "buildTarget": "suite:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "buildTarget": "suite:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "projects/suite/tsconfig.spec.json",
+            "assets": [
+              "projects/suite/src/favicon.ico",
+              "projects/suite/src/assets"
+            ],
+            "styles": [
+              "projects/suite/src/styles.css"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    },
+    "sevinpro": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/sevinpro",
+      "sourceRoot": "projects/sevinpro/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:application",
+          "options": {
+            "outputPath": "dist/sevinpro",
+            "index": "projects/sevinpro/src/index.html",
+            "browser": "projects/sevinpro/src/main.ts",
+            "polyfills": [
+              "zone.js"
+            ],
+            "tsConfig": "projects/sevinpro/tsconfig.app.json",
+            "assets": [
+              "projects/sevinpro/src/favicon.ico",
+              "projects/sevinpro/src/assets"
+            ],
+            "styles": [
+              "projects/sevinpro/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "sevinpro:build:production"
+            },
+            "development": {
+              "buildTarget": "sevinpro:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "buildTarget": "sevinpro:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "projects/sevinpro/tsconfig.spec.json",
+            "assets": [
+              "projects/sevinpro/src/favicon.ico",
+              "projects/sevinpro/src/assets"
+            ],
+            "styles": [
+              "projects/sevinpro/src/styles.css"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    }
+  }
+}
